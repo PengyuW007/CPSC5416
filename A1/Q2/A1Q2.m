@@ -7,12 +7,19 @@ xlabel('Gray value');
 ylabel('#pixels');
 title('Original');
 
-figure
-% figure 2, equalization 
+% Normalized
 rk=k/7;
 prk = nk/n;
+t = [];
+t(1)= prk(1);
 
-bar(rk,prk);
-xlabel('Normalized gray value');
-ylabel('Fraction of #pixels');
-title('Normalized');
+for k=2:1:8
+    t(k)= prk(k)+t(k-1);
+end
+
+s = t*7;
+
+for()
+
+disp(t);
+disp(s);
