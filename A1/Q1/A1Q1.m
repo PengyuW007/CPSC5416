@@ -5,7 +5,10 @@ xlabel('x');
 ylabel('Frequency h1');
 
 %y H(D)=1704sin(πD/ 255)
-h = 1704*sin(pi*x/255);
+
+%get L, total number of gray levels, 8 bits
+L = 2^8; % 256 grey levels, so it needs to be divided into 256 bins
+
 % step 0,
 %get L, total number of gray levels, 8 bits
 L = 2^8; % 256 grey levels, so it needs to be divided into 256 bins
@@ -19,4 +22,7 @@ for d = 2:256
     t(d) = t(d-1)+n(d);
 end
 N = t(256);% total number of pixels
+pIn = [];
+pIn = n/N;
+disp(pIn);
 %fprintf("d: %d, v: %d, N: %d\n",d,round(1704*sin(pi*0/255)),N);
