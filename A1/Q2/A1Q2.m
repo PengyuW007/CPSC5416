@@ -4,7 +4,7 @@ nk = [1028 3544 5023 3201 1867 734 604 383];
 bar(k,nk);
 xlabel('Gray value');
 ylabel('#pixels');
-title('Original');
+title('Histogram of input image');
 
 % Total number of 
 n = [];
