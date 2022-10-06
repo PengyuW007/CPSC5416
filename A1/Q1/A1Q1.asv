@@ -10,12 +10,15 @@ h = 1704*sin(pi*x/255);
 %get L, total number of gray levels, 8 bits
 L = 2^8; % 256 grey levels, so it needs to be divided into 256 bins
 % get n, total number of pixels
-n =[];
-n(1)= round(1704*sin(pi*0/255));
-N = n(1);
+N =[];
+N(1) = round(1704*sin(pi*1/255));
 for d = 2:256
-    n(d) = round(1704*sin(pi*(d-1)/255));
-    N = N+n(d);
-
+    N(d) = 
 end
-fprintf("d: %d, v: %d, N: %d\n",d,round(1704*sin(pi*0/255)),N);
+
+n = 0;
+for d = 0:255
+    n = n+ round(1704*sin(pi*d/255));
+    %fprintf("d: %d, v: %d, Sum: %d\n",d,round(1704*sin(pi*d/255)),n);
+end
+

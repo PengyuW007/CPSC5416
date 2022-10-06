@@ -19,7 +19,7 @@ end
 
 s = t*7;
 
-for()
+
 
 disp(t);
 disp(s);
