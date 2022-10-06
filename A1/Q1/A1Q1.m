@@ -9,6 +9,10 @@ ylabel('Frequency h1');
 %get L, total number of gray levels, 8 bits
 L = 2^8; % 256 grey levels, so it needs to be divided into 256 bins
 
+figure;
+H =1704*sin(pi*x/255)/1704;
+bar(x,H);
+
 % step 0,
 %get L, total number of gray levels, 8 bits
 L = 2^8; % 256 grey levels, so it needs to be divided into 256 bins
