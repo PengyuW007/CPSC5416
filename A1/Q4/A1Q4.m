@@ -72,7 +72,7 @@ imshow(womanEqual);
 title('Woman Equalize-output-image');
 % Histograms
 subplot(2,2,3);
-imhist(uint8Woman);
+imhist(uint8Woman,255);
 title('Woman Equalize-input-histogram');
 subplot(2,2,4);
 imhist(womanEqual,255);
