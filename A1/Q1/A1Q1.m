@@ -6,7 +6,7 @@ x=0:(L-1);
 y = 1704*sin(pi*x/255);
 bar(x,y);
 xlabel('Gray value');
-ylabel('Frequency h1');
+ylabel('#Pixels');
 title("Histogram of input image");
 
 % step 0,
@@ -39,5 +39,5 @@ end
 figure;
 bar(x,s);
 xlabel('Gray value');
-ylabel('#pixels');
+ylabel('#Pixels');
 title("Histogram of output image");
