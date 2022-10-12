@@ -3,26 +3,40 @@
 %%%%%%%%%%%%%%%
 %%%% Histeq %%%
 lrHisteqRead = imread('livingroom.tif');
-unit8Livingroom = im2uint8(lrHisteqRead);
-lrHisteq = histeq(unit8Livingroom);
+uint8Livingroom = im2uint8(lrHisteqRead);
+lrHisteq = histeq(uint8Livingroom);
 % images
 subplot(2,2,1);
-imshow(unit8Livingroom);
-title('Livingroom Histeq-input image');
+imshow(uint8Livingroom);
+title('Livingroom Histeq-input-image');
 subplot(2,2,2);
 imshow(lrHisteq);
-title('Livingroom Histeq-output image');
-axis off;
+title('Livingroom Histeq-output-image');
 % Histograms
 subplot(2,2,3);
-imhist(unit8Livingroom,255);
-title('Livingroom Histeq input histogram');
+imhist(uint8Livingroom,255);
+title('Livingroom Histeq-input-histogram');
 subplot(2,2,4);
 imhist(lrHisteq,255);
-title('Livingroom Histeq output histogram');
+title('Livingroom Histeq-output-histogram');
 
 %%%% Equalize %%%%%
 figure;
+subplot(2,2,1);
+imshow(uint8Livingroom);
+title('Livingroom Equalize-input-image');
+subplot(2,2,2);
+lrEqual = equalize('livingroom.tif');
+imshow(lrEqual);
+title('Livingroom Equalize-output-image');
+% Histograms
+subplot(2,2,3);
+imhist(uint8Livingroom,255);
+title('Livingroom Equalize-input-histogram');
+subplot(2,2,4);
+%uint8lrEqual = im2uint8(lrEqual);
+imhist(lrEqual,255);
+title('Livingroom Equalize-output-histogram');
 
 %%%%%%%%%%%%%%%%%%
 % WOMAN_DARKHAIR %
@@ -53,13 +67,6 @@ for i =1:r
     end
 end
 
-% Histogram of input image
-% x = 0:255;
-% bar(x,freq);
-% xlabel('Gray level');
-% ylabel('#Pixels');
-% title('Histogram of input image');
-
 % Applying transforamtion
 t = zeros(1,256);
 t(1)=freq(1);
@@ -76,12 +83,6 @@ for i=1:256
     map(i)=index;
     s(index+1)=s(index+1)+1;
 end
-% Histogram of output image
-% figure;
-% bar(x,s);
-% xlabel('Gray value');
-% ylabel('#Pixels');
-% title("Histogram of output image");
 
 % Output image processing
 for i=1:r
@@ -90,15 +91,6 @@ for i=1:r
     end
 end
 
-% figure;
-% subplot(1,2,1);
-% imshow(img);
-% title('Input image');
-% subplot(1,2,2);
-% imshow(output);
-% title('Output image');
-% axis off;
-
-im2 = output;
+im2 = im2double(output);
 
 end
