@@ -41,8 +41,42 @@ title('Livingroom Equalize-output-histogram');
 %%%%%%%%%%%%%%%%%%
 % WOMAN_DARKHAIR %
 %%%%%%%%%%%%%%%%%%
+%%%% Histeq %%%
+womanHisteqRead = imread('woman_darkhair.tif');
+uint8Woman = im2uint8(womanHisteqRead);
+womanHisteq = histeq(uint8Woman);
+%images
+figure;
+subplot(2,2,1);
+imshow(uint8Woman);
+title('Woman Histeq-input-image');
+subplot(2,2,2);
+imshow(womanHisteq);
+title('Woman Histeq-output-image');
+% Histograms
+subplot(2,2,3);
+imhist(uint8Woman,255);
+title('Woman Histeq-input-histogram');
+subplot(2,2,4);
+imhist(womanHisteq,255);
+title('Woman Histeq-output-histogram');
 
-
+%%%% Equalize %%%%
+figure;
+subplot(2,2,1);
+imshow(uint8Woman);
+title('Woman Equalize-input-image');
+subplot(2,2,2);
+womanEqual = equalize('woman_darkhair.tif');
+imshow(womanEqual);
+title('Woman Equalize-output-image');
+% Histograms
+subplot(2,2,3);
+imhist(uint8Woman);
+title('Woman Equalize-input-histogram');
+subplot(2,2,4);
+imhist(womanEqual,255);
+title('Woman Equalize-output-histogram');
 %%%%%%%%%%%%%
 % FUNCTIONS %
 %%%%%%%%%%%%%
