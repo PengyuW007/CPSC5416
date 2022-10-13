@@ -25,24 +25,64 @@ median5by5_3 = medfilt2(f3,[5,5]);
 % Smoothing average filter %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% 3 * 3 %%%%%
-avg3by3_1 = filter2(fspecial("average",3),f1);
-avg3by3_2 = filter2(fspecial("average",3),f2);
-avg3by3_3 = filter2(fspecial("average",3),f3);
+avg3by3_1 = filter2(fspecial("average",3),f1)/255;
+avg3by3_2 = filter2(fspecial("average",3),f2)/255;
+avg3by3_3 = filter2(fspecial("average",3),f3)/255;
 
 %%%%% 5 * 5 %%%%%
-avg5by5_1 = filter2(fspecial("average",5),f1);
-avg5by5_2 = filter2(fspecial("average",5),f2);
-avg5by5_3 = filter2(fspecial("average",5),f3);
+avg5by5_1 = filter2(fspecial("average",5),f1)/255;
+avg5by5_2 = filter2(fspecial("average",5),f2)/255;
+avg5by5_3 = filter2(fspecial("average",5),f3)/255;
 
-subplot(4,3,1);
+%%%%%%%%%%%%%%%%%%%%%
+% Results of images %
+%%%%%%%%%%%%%%%%%%%%%
+subplot(5,3,1);
 imshow(f1);
 title('Image 5%')
-subplot(4,3,2);
+subplot(5,3,2);
 imshow(f2);
 title('Image 10%');
-subplot(4,3,3);
+subplot(5,3,3);
 imshow(f3);
 title('Image 20%');
 
-subplot(4,3,4);
-imshow()
+subplot(5,3,4);
+imshow(median3by3_1);
+title('Median filter 3x3 5%');
+subplot(5,3,5);
+imshow(median3by3_2);
+title('Median filter 3x3 10%');
+subplot(5,3,6);
+imshow(median3by3_3);
+title('Median filter 3x3 20%');
+
+subplot(5,3,7);
+imshow(avg3by3_1);
+title('Average filter 3x3 5%');
+subplot(5,3,8);
+imshow(avg3by3_2);
+title('Average filter 3x3 10%');
+subplot(5,3,9);
+imshow(avg3by3_3);
+title('Average filter 3x3 20%');
+
+subplot(5,3,10);
+imshow(median5by5_1);
+title('Median filter 5x5 5%');
+subplot(5,3,11);
+imshow(median5by5_2);
+title('Median filter 5x5 10%');
+subplot(5,3,12);
+imshow(median5by5_3);
+title('Median filter 5x5 20%');
+
+subplot(5,3,13);
+imshow(avg5by5_1);
+title('Average filter 5x5 5%');
+subplot(5,3,14);
+imshow(avg5by5_2);
+title('Average filter 5x5 10%');
+subplot(5,3,15);
+imshow(avg5by5_3);
+title('Average filter 5x5 20%');
