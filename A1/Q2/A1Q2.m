@@ -24,6 +24,7 @@ for i = 1:L
     s(index+1)=s(index+1)+1;
 end
 
+% Build output histogram
 S =zeros(1,L);
 last = 1;
 for i=1:L
