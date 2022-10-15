@@ -1,41 +1,45 @@
 k = 0:7;
-nk = [1028 3544 5023 3201 1867 734 604 383];
+n = [1028 3544 5023 3201 1867 734 604 383];
+[r,L] = size(n);
 
-bar(k,nk);
+bar(k,n);
 xlabel('Gray value');
 ylabel('#pixels');
 title('Histogram of input image');
 
-% Total number of 
-n = [];
-n(1) = nk(1);
-for l =2:8
-    n(l)=n(l-1)+nk(l);
+% Total number of pixels
+N = sum(n);
+
+% Applying the transformation
+t = zeros(1,L);
+t(1)=n(1);
+for i=2:L
+    t(i)=n(i)+t(i-1);
 end
 
-N = n(8);% Total number of pixels
+s = zeros(1,L);
+for i = 1:L
+    p = t(i)/N;
+    index = round(p*(L-1));
+    s(index+1)=s(index+1)+1;
+end
 
-t = [];
-t =round(n/N,2);
+S =zeros(1,L);
+last = 1;
+for i=1:L
+    num_items = s(i);
+    sum = 0;
+    if(num_items~=0)
+        for j = last:(last+num_items-1)
+            sum=sum+n(j);
+        end
+        S(i) =sum;
+    end
+    last= last+num_items;
+end
+
 figure;
-bar(k/7,t);
-xlabel('Normalized gray value');
-ylabel('Fraction of #pixels');
-title('Normalized');
-%disp(t);
-s = round(n/N*7);
-%disp(s);
-
-sk = mat2cell(sort(s),1,histcounts(findgroups(s)));
-[r,c]=size(sk);
-%fprintf("%d\n",sk{1,6});
-
-Sk = [1028 0 3544  0 5023 3201 1867 734+604+383 ];
-Pk = round(Sk/N,2);
-%disp(Pk);
-
-figure;
-bar(k,Pk);
+bar(k,S);
 xlabel('Gray value');
 ylabel('#pixels');
-title("Histogram of output image");
+title('Histogram of output image');
