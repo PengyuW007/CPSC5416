@@ -8,7 +8,10 @@ ylabel('#pixels');
 title('Histogram of input image');
 
 % Total number of pixels
-N = sum(n);
+N = 0;
+for i =1:L
+    N=N+n(i);
+end
 
 % Applying the transformation
 t = zeros(1,L);
