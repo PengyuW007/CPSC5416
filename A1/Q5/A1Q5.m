@@ -86,3 +86,61 @@ title('Average filter 5x5 10%');
 subplot(5,3,15);
 imshow(avg5by5_3);
 title('Average filter 5x5 20%');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comparison by densities %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 5% %
+figure;
+subplot(5,1,1);
+imshow(f1);
+title('Image 5%')
+subplot(5,1,2);
+imshow(median3by3_1);
+title('Median filter 3x3 5%');
+subplot(5,1,3);
+imshow(avg3by3_1);
+title('Average filter 3x3 5%');
+subplot(5,1,4);
+imshow(avg3by3_1);
+title('Average filter 3x3 5%');
+subplot(5,1,5);
+imshow(avg5by5_1);
+title('Average filter 5x5 5%');
+
+% 10% %
+figure;
+subplot(5,1,1);
+imshow(f2);
+title('Image 10%');
+subplot(5,1,2);
+imshow(median3by3_2);
+title('Median filter 3x3 10%');
+subplot(5,1,3);
+imshow(avg3by3_2);
+title('Average filter 3x3 10%');
+subplot(5,1,4);
+imshow(median5by5_2);
+title('Median filter 5x5 10%');
+subplot(5,1,5);
+imshow(avg5by5_2);
+title('Average filter 5x5 10%');
+
+% 20% %
+figure;
+subplot(5,1,1);
+imshow(f3);
+title('Image 20%');
+subplot(5,1,2);
+imshow(median3by3_3);
+title('Median filter 3x3 20%');
+subplot(5,1,3);
+imshow(avg3by3_3);
+title('Average filter 3x3 20%');
+subplot(5,1,4);
+imshow(avg3by3_3);
+title('Average filter 3x3 20%');
+subplot(5,1,5);
+imshow(avg5by5_3);
+title('Average filter 5x5 20%');
