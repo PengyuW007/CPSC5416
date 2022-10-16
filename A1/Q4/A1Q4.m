@@ -77,6 +77,8 @@ title('Woman Equalize-input-histogram');
 subplot(2,2,4);
 imhist(womanEqual,255);
 title('Woman Equalize-output-histogram');
+
+
 %%%%%%%%%%%%%
 % FUNCTIONS %
 %%%%%%%%%%%%%
@@ -90,7 +92,7 @@ img = imread(im);
 N =r*c;
 
 % step 0 processing
-output = uint8(zeros(r,c));
+output = zeros(r,c);
 freq = zeros(1,256);
 
 % attributes
@@ -125,6 +127,6 @@ for i=1:r
     end
 end
 
-im2 = im2double(output);
+im2 = im2double(output)/255;
 
 end
