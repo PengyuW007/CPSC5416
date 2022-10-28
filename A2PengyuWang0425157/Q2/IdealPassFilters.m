@@ -114,5 +114,5 @@ for t = 1:len
     subplot(2,3,index);
     index = index+1;
     imshow(igHighi);
-    title("After High filter D0="+dHigh0_i);
+    title("After IHPF D0="+dHigh0_i);
 end
