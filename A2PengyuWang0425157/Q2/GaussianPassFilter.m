@@ -44,7 +44,7 @@ for h=1:D0LowLen
     index = index+1;
     imshow(igLowi);
     title("After GLPF when D0="+DLow0_i);
-end % end Loop, D0, n
+end % end Loop, D0
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,4 +81,4 @@ for h=1:D0HighLen
     index = index+1;
     imshow(igHighi);
     title("After GHPF when D0="+DHigh0_i);
-end % end Loop, D0, n
+end % end Loop, D0
