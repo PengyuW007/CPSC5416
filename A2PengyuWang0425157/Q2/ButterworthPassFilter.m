@@ -47,7 +47,7 @@ for h=1:D0LowLen
         subplot(4,3,index);
         index = index+1;
         imshow(igLowi);
-        title("After ILPF when D0="+DLow0_i+",n="+n);
+        title("After BSLPF when D0="+DLow0_i+",n="+n);
     end % end Loop, D0, n 
 end
 
@@ -88,6 +88,6 @@ for h=1:D0HighLen
         subplot(4,3,index);
         index = index+1;
         imshow(igHighi);
-        title("After IHPF when D0="+DHigh0_i+",n="+n);
+        title("After BSHPF when D0="+DHigh0_i+",n="+n);
     end % end Loop, D0, n 
 end
