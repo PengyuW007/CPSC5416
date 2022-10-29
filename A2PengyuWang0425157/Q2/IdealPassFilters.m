@@ -20,7 +20,6 @@ D = sqrt(U.^2+V.^2);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ideal Low Pass Filter(ILPF) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % Put all the D0s in to an array
 dLow0 = [5 80 230];
 [rowsLow,lenLow] =size(dLow0);
@@ -59,9 +58,9 @@ title('Original image');
 
 % Put all the D0s in to an array
 dHigh0 = [15 30 80];
-[rows,len] =size(dHigh0);
+[rowsHigh,lenHigh] =size(dHigh0);
 index = 4;
-for t = 1:len
+for t = 1:lenHigh
     dHigh0_i = dHigh0(t);
     HHighi = ones(r2,c2);
     for i=1:r2
