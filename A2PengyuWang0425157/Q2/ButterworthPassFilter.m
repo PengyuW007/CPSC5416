@@ -33,6 +33,7 @@ for h=1:D0LowLen
         HLowi = zeros(r2,c2);
         for i =1:r2
             for j =1:c2
+                % Build Filter
                 HLowi(i,j) = 1./(1+(D(i,j)/DLow0_i).^(2.*n));
             end
         end
