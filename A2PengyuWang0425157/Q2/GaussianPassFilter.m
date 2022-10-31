@@ -48,7 +48,7 @@ end % end Loop, D0
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Butterworth High Pass Filter %
+% Gaussian High Pass Filter %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure;
 
