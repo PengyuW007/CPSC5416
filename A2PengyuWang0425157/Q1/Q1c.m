@@ -14,17 +14,12 @@ subplot(1,3,2);
 imshow(mat2gray(log(1+abs(S))));
 title('Fourier Transform Spectrum');
 
-% S1 and P, phase operation
-[M,N] = size(S);
-S1 = S;
-S1(0.75*M:M,0.75*N:N)=0;
-P = angle(S);
-newFt = abs(S1).*exp(sqrt(-1).*P);
+% Based on the specturm got, 
+% then made the inverse of the spectrum
+inewFt = ifft2(fftshift(S));
 
-% Based on the specturm I got, 
-% then made the inverse of the new spectrum
-inewFt = ifft2(fftshift(newFt));
-res = real(inewFt);
+% Multiply the real part operation
+res = real(inewFt).*0.4;
 subplot(1,3,3);
 imshow(res);
 title('Recovered image');
