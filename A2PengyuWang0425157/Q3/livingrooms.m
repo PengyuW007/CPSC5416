@@ -5,14 +5,14 @@ workspace;
 
 livingroom = imread('livingroom_noisy.tif');
 livingroom = im2double(livingroom);
-subplot(1,4,1);
+subplot(1,5,1);
 imshow(livingroom);
 title('Original image');
 
 [r,c] = size(livingroom);
 
 ft = fftshift(fft2(livingroom));
-subplot(1,4,2)
+subplot(1,5,2)
 specturmImg = mat2gray(log(1+abs(ft)));
 imshow(specturmImg);
 title('Fourier Transform Spectrum');
@@ -64,8 +64,9 @@ for i=1:M
         Filter(i,C(j))=0;
     end
 end
-subplot(1,4,3);
+subplot(1,5,3);
 imshow(Filter);
+title('Filter of the noise')
 
 % Filter transfer function
 G = Filter.*ft;
@@ -73,5 +74,11 @@ G = Filter.*ft;
 % Inverse of DFT
 ig = ifft2(fftshift(G));
 ig = real(ig);
-subplot(1,4,4);
+subplot(1,5,4);
 imshow(ig);
+title('Cleaned image');
+
+noiseImg = livingroom-ig;
+subplot(1,5,5);
+imshow(noiseImg);
+title('Noise pattern');
