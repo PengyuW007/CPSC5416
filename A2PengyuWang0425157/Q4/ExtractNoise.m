@@ -7,13 +7,17 @@ boat = im2double(boat);
 imshow(boat);
 
 [r,c] = size(boat);
-r2 = 2*r;
-c2 = 2*c;
 
-ft = fftshift(fft2(boat,r2,c2));
+ft = fftshift(fft2(boat));
 figure;
-imshow(mat2gray(log(1+abs(ft))));
-u = -c:c-1;
-v = -r:r-1;
+spectrumImg = mat2gray(log(1+abs(ft)));
+imshow(spectrumImg);
 
-[U,V] = meshgrid(u,v);
+% A region of interest (ROI) is a portion of an image that 
+% you want to filter or operate on in some way. 
+
+C = [486 508 508 486];
+R = [322 322 368 368];
+polyPattern = roipoly(boat,C,R);
+figure;
+imshow(polyPattern);
