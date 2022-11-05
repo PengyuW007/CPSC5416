@@ -81,6 +81,7 @@ title('Cleaned image after self-design Filter');
 medianImg = medfilt2(ig);
 subplot(1,6,5);
 imshow(medianImg);
+title('Cleaned image after median filter');
 
 noiseImg = pirate-medianImg;
 subplot(1,6,6);
