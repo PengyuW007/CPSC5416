@@ -6,6 +6,7 @@ boat = imread("boat_noisy1.tif");
 boat = im2double(boat);
 subplot(1,4,1);
 imshow(boat);
+title('Originial image');
 
 [r,c] = size(boat);
 
@@ -13,6 +14,7 @@ ft = fftshift(fft2(boat));
 spectrumImg = mat2gray(log(1+abs(ft)));
 subplot(1,4,2);
 imshow(spectrumImg);
+title('Spectrum of boat noisy');
 
 % A region of interest (ROI) is a portion of an image that
 % you want to filter or operate on in some way.
@@ -21,12 +23,14 @@ RBlack = [316 316 347 347];
 polyPatternBlack = roipoly(boat,CBlack,RBlack);
 subplot(1,4,3);
 imshow(polyPatternBlack);
+title('Cropped parts in original');
 
 XBlack = min(RBlack):max(RBlack);
 YBlack = min(CBlack):max(CBlack);
 roiBlack = boat(XBlack,YBlack);
 subplot(1,4,4);
 imshow(roiBlack);
+title('Poly cropped image');
 [y,x]=size(roiBlack);
 N = x*y;
 freqBlack = zeros(1,256);
@@ -72,7 +76,7 @@ noisyImg = imnoise(blankImg,"gaussian",mean,var);
 figure;
 subplot(1,2,1);
 imshow(noisyImg);
-title("Gaussian noise with mean = " + mean +", var = "+var);
+title("Gaussian noise to blank with mean = " + mean +", var = "+var);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Noisy image 2 histogram %
