@@ -3,6 +3,9 @@ close all;
 clc;
 
 % Spatial domain filters that is based on Sobel operators
+%%%%%%%%%%%%
+% Goldhill %
+%%%%%%%%%%%%
 [X,map] = imread("goldhill.bmp");
 goldhill = ind2rgb(X,map);
 subplot(3,2,1);
@@ -42,3 +45,7 @@ subplot(3,2,6);
 imshow(M,[]);
 title('Edge Enhancement image, []');
 
+
+%%%%%%%%%
+% US021 %
+%%%%%%%%%
