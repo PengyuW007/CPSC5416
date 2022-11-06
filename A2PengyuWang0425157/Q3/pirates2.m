@@ -89,7 +89,10 @@ title('Noise pattern');
 
 figure;
 imshow(specturmImg);
+title('Fourier Transform Spectrum');
 figure;
 imshow(ig);
+title('Cleaned image after self-design Filter');
 figure;
 imshow(noiseImg);
+title('Noise pattern');

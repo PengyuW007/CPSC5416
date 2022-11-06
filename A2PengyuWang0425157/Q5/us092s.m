@@ -13,6 +13,7 @@ title("Original image");
 pepperAvg = filter2(fspecial('average',3),us092)/255;
 figure;
 imshow(pepperAvg);
+title('Average filter image');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % median, remove salt & pepper %
@@ -20,6 +21,8 @@ imshow(pepperAvg);
 pepperMedian = medfilt2(us092);
 figure;
 imshow(pepperMedian);
+title('Median filter');
+
 
 %%%%%%%%%%%%%%%%%%%%%
 % IDEAL pass filter %

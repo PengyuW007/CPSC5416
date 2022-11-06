@@ -13,6 +13,7 @@ title("Original image");
 pepperAvg = filter2(fspecial('average',3),pepper)/255;
 figure;
 imshow(pepperAvg);
+title('Average filter image');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % median, remove salt & pepper %
@@ -20,6 +21,7 @@ imshow(pepperAvg);
 pepperMedian = medfilt2(pepper);
 figure;
 imshow(pepperMedian);
+title('Median filter');
 
 %%%%%%%%%%%%%%%%%%%%%
 % IDEAL pass filter %
@@ -39,6 +41,9 @@ v = -r:r-1;
 D = sqrt(U.^2+V.^2);
 % Put all the D0s in to an array
 figure;
+subplot(2,3,2);
+imshow(pepper);
+title('Originial pepper image');
 dLow0 = [5 80 230];
 [rowsLow,lenLow] =size(dLow0);
 index = 4;
@@ -69,6 +74,9 @@ end
 % Butterworth Low Pass Filter %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure;
+subplot(4,3,2);
+imshow(pepper);
+title('Originial pepper image');
 DLow0 = [5 80 230];
 [DLowRows,D0LowLen] = size(DLow0);
 N = [1 2 4];
@@ -103,6 +111,9 @@ end
 % Gaussian Low Pass Filter %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure;
+subplot(2,3,2);
+imshow(pepper);
+title('Originial pepper image');
 DLow0 = [10 40 100];
 [DLowRows,D0LowLen] = size(DLow0);
 index = 4;

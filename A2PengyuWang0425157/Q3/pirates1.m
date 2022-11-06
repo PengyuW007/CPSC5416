@@ -90,7 +90,10 @@ title('Noise pattern');
 
 figure;
 imshow(specturmImg);
+title('Fourier Transform Spectrum');
 figure;
 imshow(medianImg);
+title('Cleaned image after median filter');
 figure;
 imshow(noiseImg);
+title('Noise pattern');

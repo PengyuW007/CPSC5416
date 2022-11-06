@@ -1,0 +1,6 @@
+# CPSC5416_A2
+
+For this assignment, mainly focused on how to denoise images. However, I have difficulties in wavelet transform.
+Especially, in q6 and q7. I tried my best...
+
+Much Harder than A1 SMH...

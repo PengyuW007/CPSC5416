@@ -1,3 +1,7 @@
+clc;
+close all;
+clear;
+
 boat = imread('boat.png');
 boat = im2double(boat);
 
