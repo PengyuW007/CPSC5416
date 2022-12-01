@@ -3,25 +3,22 @@ close all;
 clc;
 
 fly = imread('fly.pgm');
+subplot(3,3,1);
+imshow(fly);
+title("Fly original image");
 
-for i = 1:5
-    subplot(5,4,4*i-3);
-    imshow(fly);
-    title('Fly input image')
+SE = strel("disk",3);
+SE2 = strel('square',3);
 
-    SE = strel('disk',i);
-    eroseFly = imerode(fly,SE);
-    subplot(5,4,4*i-2);
-    imshow(eroseFly);
-    title("Fly after erosion, size = "+i);
+% Erosion
+erodeFly = imerode(fly,SE);
+subplot(3,3,2);
+imshow(erodeFly);
+title("Fly after erosion");
 
-    openFly = imopen(fly,SE);
-    subplot(5,4,4*i-1);
-    imshow(openFly);
-    title("Fly after opening, size = "+i);
+erodeFly2 = imerode(erodeFly,SE2); 
+boundaryErode = erodeFly - erodeFly2;
+subplot(3,3,3);
+imshow(boundaryErode);
+title("Erosion boundary");
 
-    closeFly = imclose(fly,SE);
-    subplot(5,4,4*i);
-    imshow(closeFly);
-    title("Fly after closing, size = "+i);
-end
