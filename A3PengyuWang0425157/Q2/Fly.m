@@ -41,7 +41,7 @@ title("Opening boundary");
 subplot(3,3,7);
 imshow(fly);
 title("Fly original image");
-closeFly = imopen(fly,SE);
+closeFly = imclose(fly,SE);
 subplot(3,3,8);
 imshow(closeFly);
 title("Fly after closing");
