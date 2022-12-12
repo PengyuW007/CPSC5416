@@ -22,8 +22,10 @@ figure;
 img = imread(im);
 subplot(1,3,1);
 imshow(img);
+title("Original image");
 subplot(1,3,2);
 imhist(img);
+title("Histogram of image")
 
 [r,c]=size(img);
 sumImg = sum(img(:));
@@ -67,4 +69,5 @@ end
 im2 = output;
 subplot(1,3,3);
 imshow(im2);
+title("Segmented image");
 end
