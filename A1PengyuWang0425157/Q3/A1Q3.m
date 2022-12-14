@@ -1,3 +1,7 @@
+clear;
+close all;
+clc;
+
 % specified histogram
 x =0:7;
 nSpecified = [0 0 4096 4096 4096 4096 0 0];

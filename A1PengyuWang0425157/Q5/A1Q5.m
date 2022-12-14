@@ -1,3 +1,7 @@
+clear;
+close all;
+clc;
+
 f = imread('lena_gray_256.tif');
 % d, density of salt&pepper
 d1 = 0.05;

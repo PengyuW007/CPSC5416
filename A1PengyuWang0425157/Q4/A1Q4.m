@@ -1,3 +1,7 @@
+clear;
+close all;
+clc;
+
 %%%%%%%%%%%%%%%
 % LIVING ROOM %
 %%%%%%%%%%%%%%%
