@@ -1,3 +1,7 @@
+clear;
+close all;
+clc;
+
 %get L, total number of gray levels, 8 bits
 L = 2^8; % 256 grey levels, so it needs to be divided into 256 bins
 
